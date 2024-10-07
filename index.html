@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title></title>
+</head>
+
+<body class="bg-gray-100 ">
+     
+    
+    <button id="BookBtn" class=" fixed z-10 mx-96 right-4 bg-green-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center focus:outline-none focus:shadow-outline">
+        Book Now
+    </button>
+    <button id="feedbackBtn" class="fixed z-10 mx-96 right-4 bg-green-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center focus:outline-none focus:shadow-outline">
+       
+        <i class="fa-solid fa-comment text-3xl"></i>
+    </button>
+
+    <div id="feedbackPopup" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50 hidden">
+        
+        <div class="bg-white p-8 rounded shadow-lg max-w-md">
+            <h2 class="text-2xl font-bold mb-6">Feedback Form</h2>
+            <form class="space-y-4">
+                <div>
+                    <label for="feedback" class="block text-gray-700 font-bold mb-2">Your Feedback</label>
+                    <textarea id="feedback" name="feedback" rows="4" class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" placeholder="Enter your feedback"></textarea>
+                </div>
+                <div class="flex justify-end">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                    <button id="closeFeedbackBtn" type="button" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 ml-2 rounded focus:outline-none focus:shadow-outline">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <nav class="bg-white shadow ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <a href="#" class="text-2xl font-bold text-green-600">TravelCo.</a>
+                    </div>
+                    <div class="hidden md:flex space-x-4">
+                        <a href="index.html"
+                            class="text-gray-700 hover:text-green-600  px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="Destination.html"
+                            class="text-gray-700 hover:text-green-600  px-3 py-2 rounded-md text-sm font-medium">Destinations</a>
+                        <a href="Pakage.html"
+                            class="text-gray-700 hover:text-green-600  px-3 py-2 rounded-md text-sm font-medium">Packages</a>
+                        <a href="Blog.html"
+                            class="text-gray-700 hover:text-green-600  px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+                        <a href="Contact.html"
+                            class="text-gray-700 hover:text-green-600  px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center mx-10">
+                    <a href="SignIn.html"
+                        class=" btn text-gray-700 hover:bg-blue-500 hover:text-white px-5  py-2 rounded-md text-sm font-medium ms-10">Sign
+                        In</a>
+                    <a href="Login.html" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium">Login</a>
+                </div>
+                <div class="-mr-2 flex md:hidden -m-14">
+                    <button id="mobile-menu-button"
+                        class="inline-flex items-center justify-center p-2 text-gray-700 hover:text-blue-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500"
+                        aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 ">
+                <a href="index.html"
+                    class="text-gray-700 hover:bg-green-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="Destination.html"
+                    class="text-gray-700 hover:bg-green-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Destinations</a>
+                <a href="Pakage.html"
+                    class="text-gray-700 hover:bg-green-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Packages</a>
+                <a href="Blog.html"
+                    class="text-gray-700 hover:bg-green-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+                <a href="Contact.html"
+                    class="text-gray-700 hover:bg-green-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="SignIn.html"
+                    class="text-gray-700 hover:bg-green-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sign
+                    In</a>
+                <a href="Login.html" class="bg-green-600 text-white block px-4 py-2 rounded-md text-base font-medium">Login</a>
+            </div>
+        </div>
+    </nav>
+
+
+    
+
+    <section class=" banner relative h-screen flex flex-col items-center justify-center text-center text-white " style=" background-image: url('./images/home-filter-bg.png');
+    background-size: cover;
+    background-position: center;
+    height: 90vh">
+    <!-- <div class="banner w-full p-8  rounded-lg shadow-lg min-h-96 "> -->
+        <div class="container mx-auto flex flex-col md:flex-row items-center ">
+            <div class="md:w-2/3 flex flex-col space-y-4">
+                <div class="grid grid-cols-2 gap-4 ">
+                    <select class="border border-gray-300 rounded-md px-4 py-2 bg-transparent text-white">
+                        <option class="text-black">Destination</option>
+                        <option class="text-black">Europe</option>
+                        <option class="text-black">Asia</option>
+                        <option class="text-black">America</option>
+                    </select>
+                    <select class="border border-gray-300 rounded-md px-4 py-2 bg-transparent text-white">
+                        <option class="text-black">Check-out</option>
+                        <option class="text-black">Option 1</option>
+                        <option class="text-black">Option 2</option>
+                        <option class="text-black">Option 3</option>
+                    </select>
+                    <select class="border border-gray-300 rounded-md px-4 py-2 bg-transparent text-white">
+                        <option class="text-black">Guests</option>
+                        <option class="text-black">1</option>
+                        <option class="text-black">2</option>
+                        <option class="text-black">3</option>
+                    </select>
+                    <input type="date" placeholder="Input 4" class="border p-2 rounded bg-transparent text-white">
+                </div>
+                <button class="bg-green-600 text-white p-2 rounded hover:bg-blue-600 w-full">Submit</button>
+            </div>
+            <div class="md:w-1/3 flex flex-col items-start text-white p-4">
+                <h2 class="text-4xl font-bold mb-2">Tours and Trip packages, Globally!</h2>
+                <p class="text-lg text-gray-300">Please fill out the inputs on the left to get started with our
+                    services.</p>
+            </div>
+        </div>
+    
+</section>
+
+
+
+
+    
+
+
+    <div class="container mx-auto p-6 flex flex-col md:flex-row items-start">
+        <!-- Left Heading Text -->
+        <div class="md:w-2/3 flex flex-col justify-center mb-6 md:mb-0">
+            <h2 class="text-3xl font-bold text-gray-800">Welcome to Our Service!</h2>
+            <p class="mt-2 text-gray-600"><span class="text-2xl text-black">our features and offerings below.</span> <br>Various kinds of sports and extreme attractions are pulling people to destinations both rural and metropolitan around the world. Challenging and competitive organizations are offering an adrenaline rush for sports and extreme enthusiasts. Sports and extreme tourism are two of the fastest-growing tourism sectors in the world. Matches, competitions, and sports in which you can push your physical and mental limits are the focus of the theme, but in detail, it has many other kinds and specific destinations.</p>
+        </div>
+
+        <!-- Right Cards -->
+        <div class="max-w-2xl mx-auto mt-10">
+            <div class="flex gap-3 bg-white border border-gray-300 rounded-xl overflow-hidden items-center justify-start">
+
+                <div class="relative w-32 h-32 flex-shrink-0">
+                    <img class="absolute left-0 top-0 w-full h-full object-cover object-center transition duration-50"
+                        loading="lazy" src="./images/europe.webp">
+                </div>
+
+                <div class="flex flex-col gap-2 py-2">
+
+                    <p class="text-xl font-bold">Europe</p>
+
+                    <p class="text-gray-500">
+                        Upto 72% Off,
+                        
+                    </p>
+
+                    <span class="flex items-center justify-start text-gray-500">
+                        <svg class="w-4 h-4 mr-1 mt-1" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <a href="" target="_blank">Worldwide</a>
+                    </span>
+                </div>
+            </div>
+            <div class="max-w-2xl mx-auto mt-5">
+                <div
+                    class="flex gap-3 bg-white border border-gray-300 rounded-xl overflow-hidden items-center justify-start">
+
+                    <div class="relative w-32 h-32 flex-shrink-0">
+                        <img class="absolute left-0 top-0 w-full h-full object-cover object-center transition duration-50"
+                            loading="lazy" src="./images/Asia.webp">
+                    </div>
+
+                    <div class="flex flex-col gap-2 py-2">
+
+                        <p class="text-xl font-bold">Asia</p>
+    
+                        <p class="text-gray-500">
+                            Upto 20% Off,
+                            
+                        </p>
+    
+                        <span class="flex items-center justify-start text-gray-500">
+                            <svg class="w-4 h-4 mr-1 mt-1" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <a href="" target="_blank">Worldwide</a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="max-w-2xl mx-auto mt-5">
+                    <div
+                        class="flex gap-3 bg-white border border-gray-300 rounded-xl overflow-hidden items-center justify-start">
+
+                        <div class="relative w-32 h-32 flex-shrink-0">
+                            <img class="absolute left-0 top-0 w-full h-full object-cover object-center transition duration-50"
+                                loading="lazy" src="./images/africa.webp">
+                        </div>
+
+                        <div class="flex flex-col gap-2 py-2">
+
+                            <p class="text-xl font-bold">Africa</p>
+
+                            <p class="text-gray-500">
+                                Upto 20% Off,
+                                The best tours and trip deals, Globally
+                                the most booked travel packages.
+                            </p>
+
+                            <span class="flex items-center justify-start text-gray-500">
+                                <svg class="w-4 h-4 mr-1 mt-1" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <a href="amitpachange.com" target="_blank">amitpachange.com</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="bg-gray-100">
+        <div class="container mx-auto px-4 py-8">
+            <h1 class="text-4xl font-bold text-center mb-8">Popular Destinations</h1>
+            <section class="bg-white">
+                <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
+                        <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col">
+                            <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
+                                <img src="./images/africa.png" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                                <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">africa</h3>
+                            </a>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50">
+                            <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4">
+                                <img src="./images/asia.jpg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                                <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">asia</h3>
+                            </a>
+                            <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2">
+                                <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
+                                    <img src="./images/europe.webp" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                                    <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                    <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">europe</h3>
+                                </a>
+                                <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
+                                    <img src="./images/asia.jpg" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                                    <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                    <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">asia</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 md:col-span-1 bg-sky-50 h-auto md:h-full flex flex-col">
+                            <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
+                                <img src="./images/europe.webp" alt="" class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                                <div class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
+                                <h3 class="z-10 text-2xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">europe</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+        <h1 class="text-4xl font-bold text-center mb-8">Most Popular Tours</h1>
+        <div class="border-b mb-5 flex justify-between text-sm">
+            <div class="text-indigo-600 flex items-center pb-2 pr-2 border-b-2 border-indigo-600 uppercase">
+                <svg class="h-6 mr-3" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.005 455.005"
+                    style="enable-background:new 0 0 455.005 455.005;" xml:space="preserve">
+                    <g>
+                        <path d="M446.158,267.615c-5.622-3.103-12.756-2.421-19.574,1.871l-125.947,79.309c-3.505,2.208-4.557,6.838-2.35,10.343 c2.208,3.505,6.838,4.557,10.343,2.35l125.947-79.309c2.66-1.675,4.116-1.552,4.331-1.432c0.218,0.12,1.096,1.285,1.096,4.428 c0,8.449-6.271,19.809-13.42,24.311l-122.099,76.885c-6.492,4.088-12.427,5.212-16.284,3.084c-3.856-2.129-6.067-7.75-6.067-15.423 c0-19.438,13.896-44.61,30.345-54.967l139.023-87.542c2.181-1.373,3.503-3.77,3.503-6.347s-1.323-4.974-3.503-6.347L184.368,50.615 c-2.442-1.538-5.551-1.538-7.993,0L35.66,139.223C15.664,151.815,0,180.188,0,203.818v4c0,23.63,15.664,52.004,35.66,64.595 l209.292,131.791c3.505,2.207,8.136,1.154,10.343-2.35c2.207-3.505,1.155-8.136-2.35-10.343L43.653,259.72 C28.121,249.941,15,226.172,15,207.818v-4c0-18.354,13.121-42.122,28.653-51.902l136.718-86.091l253.059,159.35l-128.944,81.196 c-20.945,13.189-37.352,42.909-37.352,67.661c0,13.495,4.907,23.636,13.818,28.555c3.579,1.976,7.526,2.956,11.709,2.956 c6.231,0,12.985-2.176,19.817-6.479l122.099-76.885c11.455-7.213,20.427-23.467,20.427-37.004 C455.004,277.119,451.78,270.719,446.158,267.615z"> </path>
+                        <path d="M353.664,232.676c2.492,0,4.928-1.241,6.354-3.504c2.207-3.505,1.155-8.136-2.35-10.343l-173.3-109.126 c-3.506-2.207-8.136-1.154-10.343,2.35c-2.207,3.505-1.155,8.136,2.35,10.343l173.3,109.126 C350.916,232.303,352.298,232.676,353.664,232.676z"> </path>
+                        <path d="M323.68,252.58c2.497,0,4.938-1.246,6.361-3.517c2.201-3.509,1.14-8.138-2.37-10.338L254.46,192.82 c-3.511-2.202-8.139-1.139-10.338,2.37c-2.201,3.51-1.14,8.138,2.37,10.338l73.211,45.905 C320.941,252.21,322.318,252.58,323.68,252.58z"> </path>
+                        <path d="M223.903,212.559c-3.513-2.194-8.14-1.124-10.334,2.39c-2.194,3.514-1.124,8.14,2.39,10.334l73.773,46.062 c1.236,0.771,2.608,1.139,3.965,1.139c2.501,0,4.947-1.251,6.369-3.529c2.194-3.514,1.124-8.14-2.39-10.334L223.903,212.559z"> </path>
+                        <path d="M145.209,129.33l-62.33,39.254c-2.187,1.377-3.511,3.783-3.503,6.368s1.345,4.983,3.54,6.348l74.335,46.219 c1.213,0.754,2.586,1.131,3.96,1.131c1.417,0,2.833-0.401,4.071-1.201l16.556-10.7c3.479-2.249,4.476-6.891,2.228-10.37 c-2.248-3.479-6.891-4.475-10.37-2.228l-12.562,8.119l-60.119-37.38l48.2-30.355l59.244,37.147l-6.907,4.464 c-3.479,2.249-4.476,6.891-2.228,10.37c2.249,3.479,6.894,4.476,10.37,2.228l16.8-10.859c2.153-1.392,3.446-3.787,3.429-6.351 c-0.018-2.563-1.344-4.94-3.516-6.302l-73.218-45.909C150.749,127.792,147.647,127.795,145.209,129.33z"> </path>
+                        <path d="M270.089,288.846c2.187-3.518,1.109-8.142-2.409-10.329l-74.337-46.221c-3.518-2.188-8.143-1.109-10.329,2.409 c-2.187,3.518-1.109,8.142,2.409,10.329l74.337,46.221c1.232,0.767,2.601,1.132,3.953,1.132 C266.219,292.387,268.669,291.131,270.089,288.846z"> </path>
+                        <path d="M53.527,192.864c-2.187,3.518-1.109,8.142,2.409,10.329l183.478,114.081c1.232,0.767,2.601,1.132,3.953,1.132 c2.506,0,4.956-1.256,6.376-3.541c2.187-3.518,1.109-8.142-2.409-10.329L63.856,190.455 C60.338,188.266,55.714,189.346,53.527,192.864z"> </path>
+                    </g>
+                </svg>
+                <a href="#" class="font-semibold inline-block">Find your next adventure among the most booked travel packages.</a>
+            </div>
+            <a href="#">See All</a>
+        </div>
+    
+    
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+    
+            <!-- CARD 1 -->
+            <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full"
+                            src="./images/Cappadocia-Balloon-Tour-2-high.webp"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a>
+                    <a href="#!">
+                        <div
+                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                            Tours
+                        </div>
+                    </a>
+                </div>
+                <div class="px-6 py-4 mb-auto">
+                    <a href="#"
+                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out mb-2">10 Days Turkish Delight Vacation Package</a>
+                    <p class="text-gray-500 text-sm">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1">6 mins ago</span>
+                    </span>
+    
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
+                            </path>
+                        </svg>
+                        <span class="ml-1">39 Comments</span>
+                    </span>
+                </div>
+            </div>
+    
+    
+    
+            <!-- CARD 2 -->
+            <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full"
+                            src="./images/Ephesus1-2-high.webp"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a><a href="#!">
+                        <div
+                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                            Tours
+                        </div>
+                    </a>
+                </div>
+                <div class="px-6 py-4 mb-auto">
+                    <a href="#"
+                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out mb-2">5 Days Taste of Turkey Vacation</a>
+                    <p class="text-gray-500 text-sm">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1"> 10 days ago</span>
+                    </span>
+    
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
+                            </path>
+                        </svg>
+                        <span class="ml-1">0 Comments</span>
+                    </span>
+                </div>
+            </div>
+    
+    
+            
+            <!-- CARD 3 -->
+            <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full"
+                            src="./images/ExploreCHC055.webp"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a><a href="#!">
+                        <div
+                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                            Tours
+                        </div>
+                    </a>
+                </div>
+                <div class="px-6 py-4 mb-auto">
+                    <a href="#"
+                        class="font-medium text-lg hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Cappadocia Hot Air Ballooning From Soganlı Cappadocia</a>
+                    <p class="text-gray-500 text-sm">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1">16 hours ago</span>
+                    </span>
+    
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
+                            </path>
+                        </svg>
+                        <span class="ml-1">9 Comments</span>
+                    </span>
+                </div>
+            </div>
+
+
+            <!-- card:4 -->
+
+            <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full"
+                            src="./images/tour1.jpg"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a>
+                    <a href="#!">
+                        <div
+                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                            Tours
+                        </div>
+                    </a>
+                </div>
+                <div class="px-6 py-4 mb-auto">
+                    <a href="#"
+                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out mb-2">10 Days Turkish Delight Vacation Package</a>
+                    <p class="text-gray-500 text-sm">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1">6 mins ago</span>
+                    </span>
+    
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
+                            </path>
+                        </svg>
+                        <span class="ml-1">39 Comments</span>
+                    </span>
+                </div>
+            </div>
+    
+    
+    
+            <!-- CARD 5 -->
+            <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full"
+                            src="./images/tour2.jpg"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a><a href="#!">
+                        <div
+                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                            Tours
+                        </div>
+                    </a>
+                </div>
+                <div class="px-6 py-4 mb-auto">
+                    <a href="#"
+                        class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out mb-2">5 Days Taste of Turkey Vacation</a>
+                    <p class="text-gray-500 text-sm">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1"> 10 days ago</span>
+                    </span>
+    
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
+                            </path>
+                        </svg>
+                        <span class="ml-1">0 Comments</span>
+                    </span>
+                </div>
+            </div>
+    
+    
+            
+            <!-- CARD 6 -->
+            <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full"
+                            src="./images/tour4.jpg"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a><a href="#!">
+                        <div
+                            class="text-xs absolute top-0 right-0 bg-indigo-600 px-4 py-2 text-white mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                            Tours
+                        </div>
+                    </a>
+                </div>
+                <div class="px-6 py-4 mb-auto">
+                    <a href="#"
+                        class="font-medium text-lg hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Cappadocia Hot Air Ballooning From Soganlı Cappadocia</a>
+                    <p class="text-gray-500 text-sm">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1">16 hours ago</span>
+                    </span>
+    
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg class="h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
+                            </path>
+                        </svg>
+                        <span class="ml-1">9 Comments</span>
+                    </span>
+                </div>
+            </div>
+
+            
+    
+        </div>
+    
+    </div>
+
+
+
+
+    <div class="container mx-auto mt-10">
+        <h1 class="text-3xl font-bold text-center mb-6">Explore Our Tours</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="card bg-white p-5 rounded-lg shadow-lg">
+                <img src="./images/tt1.jpg" alt="Tour 1" class="w-full h-48 rounded-md object-cover mb-4">
+                <h2 class="text-xl font-semibold">Tour to the Mountains</h2>
+                <p class="mt-2 text-gray-600">Experience the breathtaking views and enjoy the fresh air.</p>
+                <div class="flex items-center mt-2">
+                    <span class="text-yellow-500">★★★★☆</span>
+                    <span class="ml-2 text-gray-500">(120 reviews)</span>
+                </div>
+                <p class="mt-2 font-bold text-lg">$299</p>
+                <button onclick="openModal('Tour to the Mountains', 'Experience the breathtaking views and enjoy the fresh air.', 299)" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Learn More</button>
+            </div>
+
+            <div class="card bg-white p-5 rounded-lg shadow-lg">
+                <img src="./images/tt2.jpg" alt="Tour 2" class="w-full h-48 rounded-md object-cover mb-4">
+                <h2 class="text-xl font-semibold">City Sightseeing</h2>
+                <p class="mt-2 text-gray-600">Discover the beauty and history of the city.</p>
+                <div class="flex items-center mt-2">
+                    <span class="text-yellow-500">★★★★★</span>
+                    <span class="ml-2 text-gray-500">(150 reviews)</span>
+                </div>
+                <p class="mt-2 font-bold text-lg">$199</p>
+                <button onclick="openModal('City Sightseeing', 'Discover the beauty and history of the city.', 199)" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Learn More</button>
+            </div>
+
+            <div class="card bg-white p-5 rounded-lg shadow-lg">
+                <img src="./images/tt5.jpg" alt="Tour 3" class="w-full h-48 rounded-md object-cover mb-4">
+                <h2 class="text-xl font-semibold">Beach Adventure</h2>
+                <p class="mt-2 text-gray-600">Relax on the beach and enjoy exciting water sports.</p>
+                <div class="flex items-center mt-2">
+                    <span class="text-yellow-500">★★★★☆</span>
+                    <span class="ml-2 text-gray-500">(80 reviews)</span>
+                </div>
+                <p class="mt-2 font-bold text-lg">$249</p>
+                <button onclick="openModal('Beach Adventure', 'Relax on the beach and enjoy exciting water sports.', 249)" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Learn More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-5 rounded-lg shadow-lg w-11/12 md:w-1/3">
+            <h2 id="modal-title" class="text-xl font-semibold"></h2>
+            <p id="modal-content" class="mt-2 text-gray-600"></p>
+            <p id="modal-price" class="mt-2 font-bold text-lg"></p>
+            <button onclick="closeModal()" class="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">Close</button>
+        </div>
+    </div>
+
+
+
+
+<!-- Container -->
+<div class="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl">
+
+    <!-- Image Column -->
+    <div class="w-full h-64 lg:w-1/2 lg:h-auto">
+        <img class="h-full w-full object-cover" src="https://picsum.photos/id/1018/2000" alt="Winding mountain road">
+    </div>
+    <!-- Close Image Column -->
+
+    <!-- Text Column -->
+    <div
+        class="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
+        <!-- Text Wrapper -->
+        <div class="flex flex-col p-12 md:px-16">
+            <h2 class="text-2xl font-medium uppercase text-green-800 lg:text-4xl">Winding Mountain Road</h2>
+            <p class="mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
+            </p>
+            <!-- Button Container -->
+            <div class="mt-8">
+                <a href="#"
+                    class="inline-block w-full text-center text-lg font-medium text-gray-100 bg-green-600 border-solid border-2 border-gray-600 py-4 px-10 hover:bg-green-800 hover:shadow-md md:w-48">Read
+                    More</a>
+            </div>
+        </div>
+        <!-- Close Text Wrapper -->
+    </div>
+    <!-- Close Text Column -->
+
+</div>
+
+
+
+
+
+
+
+<div class="container mx-auto py-10">
+    <h1 class="text-3xl font-bold text-center mb-6">Travel Website Metrics</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+            <i class="fas fa-users fa-2x text-green-600 mb-2"></i>
+            <h2 class="text-xl font-semibold text-blue-600">Total Visitors</h2>
+            <p class="text-4xl font-bold mt-2 number" id="totalVisitors">0</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+            <i class="fas fa-plane fa-2x text-green-600 mb-2"></i>
+            <h2 class="text-xl font-semibold text-blue-600">Bookings Made</h2>
+            <p class="text-4xl font-bold mt-2 number" id="bookingsMade">0</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+            <i class="fas fa-star fa-2x text-green-600 mb-2"></i>
+            <h2 class="text-xl font-semibold text-blue-600">Customer Satisfaction</h2>
+            <p class="text-4xl font-bold mt-2 number" id="customerSatisfaction">0%</p>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="mt-16 mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+    <div class="rounded-3xl bg-green-700 py-10 px-6 sm:py-16 sm:px-12 lg:flex lg:items-center lg:p-20">
+      <div class="lg:w-0 lg:flex-1">
+        <h2 class="text-3xl font-bold tracking-tight text-white">Sign up for our newsletter</h2>
+        <p class="mt-4 max-w-3xl text-lg text-gray-100">
+            Enjoy savings of up to 50% on our tours! Gain exclusive access to email-only offers for members..
+        </p>
+      </div>
+      <div class="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 lg:flex-1">
+        <form method="post" class="sm:flex space-y-2">
+          <label for="name" class="sr-only">Name</label>
+          <label for="email-address" class="sr-only">Email address</label>
+          <input id="name" type="name" autocomplete="name" class="w-full rounded-md sm:mr-3 border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-700" placeholder="Your name">
+          <input id="email-address" type="email" autocomplete="email" class="w-full rounded-md border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-700" placeholder="Your email">
+          <input type="checkbox" value="1" class="hidden" tabindex="-1" autocomplete="off">
+          <button type="submit" class="mt-3 flex w-full items-center justify-center rounded-md border border-transparent bg-gray-500 px-5 py-3 text-base font-medium text-white hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-700 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0">Subscribe</button>
+        </form>
+        <p class="mt-3 text-sm text-gray-100">
+          We care about the protection of your data. Read our
+          <a href="" class="font-medium text-white underline">Privacy Policy.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer>
+    <div class="bg-white py-4 text-black mt-32">
+      <div class="container px-4 mx-auto">
+        <div class="-mx-4 flex flex-wrap justify-between">
+          <div class="px-4 my-4 w-full xl:w-1/5">
+            <a href="/" class="block w-56 mb-10">
+                    <p class="text-5xl text-black">Travelco.</p>
+            </a>
+            <p class="text-justify">
+                Dozens of medieval castles, awe-inspiring churches, picturesque islands, pristine beaches, a fusion of Eastern and Western cuisine, and a rich cultural heritage—Europe is undoubtedly            </p>
+          </div>
+
+          <div class="px-4 my-4 w-full sm:w-auto">
+            <div>
+              <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">Company</h2>
+            </div>
+            <ul class="leading-8">
+              <li><a href="#" class="hover:text-blue-400">About Us</a></li>
+              <li><a href="#" class="hover:text-blue-400">Terms &amp; Conditions</a></li>
+              <li><a href="#" class="hover:text-blue-400">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-blue-400">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="px-4 my-4 w-full sm:w-auto">
+            <div>
+              <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">Blog</h2>
+            </div>
+            <ul class="leading-8">
+              <li><a href="#" class="hover:text-blue-400">Supplier Agent / Incoming</a></li>
+              <li><a href="#" class="hover:text-blue-400">Supplier Agent Log In</a></li>
+              <li><a href="#" class="hover:text-blue-400">Distribution Partner Solutions</a></li>
+            </ul>
+          </div>
+          <div class="px-4 my-4 w-full sm:w-auto xl:w-1/5">
+            <div>
+              <h2 class="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">Connect With Us</h2>
+            </div>
+            <a href="#" class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+              </svg>
+            </a>
+            <a href="#" class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+              </svg>
+            </a>
+            <a href="#" class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+              </svg>
+            </a>
+            <a href="#" class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+              </svg>
+            </a>
+            <a href="#" class="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full hover:text-blue-400 hover:border-blue-400">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-indigo-700 py-4 text-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="-mx-4 flex flex-wrap justify-center">
+          <div class="px-4 w-full text-center sm:w-auto sm:text-left">
+            Copyright © 2020
+            <script>new Date().getFullYear() > 2020 && document.write("- " + new Date().getFullYear())</script>- 2022
+            TravelCo. All Rights Reserved.
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+        
+        <script>
+
+const nextPageBtn = document.getElementById('BookBtn');
+
+// Add click event listener to the button
+nextPageBtn.addEventListener('click', function() {
+    // Redirect to the next page
+    window.location.href = 'Booking.html';
+});
+            // Get elements
+        const feedbackBtn = document.getElementById('feedbackBtn');
+        const closeFeedbackBtn = document.getElementById('closeFeedbackBtn');
+        const feedbackPopup = document.getElementById('feedbackPopup');
+
+        // Open feedback popup when button is clicked
+        feedbackBtn.addEventListener('click', function() {
+            feedbackPopup.classList.remove('hidden');
+        });
+
+        // Close feedback popup when close button or outside popup is clicked
+        closeFeedbackBtn.addEventListener('click', function() {
+            feedbackPopup.classList.add('hidden');
+        });
+
+        feedbackPopup.addEventListener('click', function(event) {
+            if (event.target === feedbackPopup) {
+                feedbackPopup.classList.add('hidden');
+            }
+        });
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+
+
+            function openModal(title, content, price) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-content').innerText = content;
+            document.getElementById('modal-price').innerText = `$${price}`;
+            document.getElementById('modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+
+
+
+        function animateNumber(id, start, end, duration) {
+            let startTimestamp = null;
+
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                document.getElementById(id).innerText = Math.floor(progress * (end - start) + start).toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    document.getElementById(id).innerText = end.toLocaleString(); // Ensure it ends exactly at the number
+                }
+            };
+
+            window.requestAnimationFrame(step);
+        }
+
+        // Start animations
+        animateNumber('totalVisitors', 0, 120000, 2000);
+        animateNumber('bookingsMade', 0, 35000, 2000);
+        animateNumber('customerSatisfaction', 0, 95, 2000);
+
+
+
+        const messages = [
+            "Discover beautiful beaches.",
+            "Explore ancient ruins.",
+            "Experience vibrant cultures.",
+            "Taste exotic cuisines.",
+            "Adventure in the great outdoors."
+        ];
+
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const slider = document.getElementById('text-slider');
+            slider.classList.remove('opacity-100');
+            slider.classList.add('opacity-0');
+
+            setTimeout(() => {
+                slider.innerText = messages[currentIndex];
+                slider.classList.remove('opacity-0');
+                slider.classList.add('opacity-100');
+            }, 500); // Match this with the CSS transition duration
+
+            currentIndex = (currentIndex + 1) % messages.length;
+        }
+
+        // Initial setup
+        updateSlider();
+        // Change text every 4 seconds
+        setInterval(updateSlider, 4000);
+        </script>
+</body>
+
+</html>
